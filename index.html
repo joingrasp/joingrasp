@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI compliance & EU regulation for enterprises</title>
+    <meta name="description" content="An enterprise guide to managing AI compliance, understanding EU regulations, and automating risk mapping under the EU AI Act framework.">
+    <meta name="keywords" content="AI compliance & EU regulation for enterprises, EU AI Act, AI Governance, joingrasp.com, Enterprise AI Security">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Favicon from the local folder -->
+    <link rel="icon" href="favicon.png" type="image/png">
+    
+    <!-- Premium Google Font (Inter) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Base Reset & Variables */
+        :root {
+            --mint-green: #11e596;
+            --mint-hover: #0fd288;
+            --dark-slate: #0f172a;
+            --text-dark: #111827;
+            --text-gray: #4b5563;
+            --border-light: #e5e7eb;
+            --bg-light: #f8fafc;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: var(--text-dark);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* 1. Header Navigation */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 40px;
+            border-bottom: 1px solid var(--border-light);
+            background: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+        
+        .logo-img {
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
+        }
+
+        nav.main-nav {
+            display: flex;
+            gap: 28px;
+        }
+        nav.main-nav a {
+            font-size: 14px;
+            font-weight: 500;
+            color: #374151;
+            transition: color 0.2s ease;
+        }
+        nav.main-nav a:hover {
+            color: var(--mint-hover);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .login-btn {
+            font-size: 14px;
+            font-weight: 500;
+            color: #374151;
+            padding: 10px 18px;
+            border: 1px solid var(--border-light);
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+        .login-btn:hover {
+            background: #f9fafb;
+        }
+
+        .demo-btn {
+            font-size: 14px;
+            font-weight: 600;
+            background-color: var(--mint-green);
+            color: var(--dark-slate);
+            padding: 11px 22px;
+            border-radius: 6px;
+            transition: background 0.2s ease;
+            border: none;
+            cursor: pointer;
+        }
+        .demo-btn:hover {
+            background-color: var(--mint-hover);
+        }
+
+        /* 2. Hero Area with precisely requested Title */
+        .hero {
+            text-align: center;
+            padding: 80px 20px 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .hero h1 {
+            font-size: 46px;
+            font-weight: 800;
+            line-height: 1.2;
+            letter-spacing: -1px;
+            margin-bottom: 24px;
+            color: var(--text-dark);
+        }
+        .hero p {
+            font-size: 18px;
+            color: var(--text-gray);
+            line-height: 1.6;
+            max-width: 750px;
+            margin: 0 auto 35px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 30px;
+        }
+        .secondary-btn {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text-dark);
+            padding: 12px 26px;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            background: #fff;
+            transition: all 0.2s ease;
+        }
+        .secondary-btn:hover {
+            background: #f9fafb;
+            border-color: #9ca3af;
+        }
+        .hero-demo-btn {
+            font-size: 15px;
+            font-weight: 600;
+            background-color: var(--mint-green);
+            color: var(--dark-slate);
+            padding: 12px 26px;
+            border-radius: 6px;
+            transition: background 0.2s ease;
+        }
+        .hero-demo-btn:hover {
+            background-color: var(--mint-hover);
+        }
+
+        /* 3. Article Content Area */
+        .article-body {
+            max-width: 800px;
+            margin: 0 auto 80px;
+            padding: 0 20px;
+        }
+        .article-body p {
+            font-size: 16px;
+            color: #334155;
+            line-height: 1.75;
+            margin-bottom: 24px;
+        }
+        .article-body h2 {
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin: 40px 0 16px;
+            letter-spacing: -0.5px;
+        }
+        .article-body h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin: 30px 0 12px;
+        }
+        .article-body ul {
+            margin-bottom: 24px;
+            padding-left: 20px;
+        }
+        .article-body li {
+            font-size: 16px;
+            color: #334155;
+            line-height: 1.75;
+            margin-bottom: 10px;
+        }
+        .anchor-link {
+            color: #0ea5e9;
+            font-weight: 600;
+            text-decoration: underline;
+        }
+        .anchor-link:hover {
+            color: #0284c7;
+        }
+
+        /* Highlight Box inside Article */
+        .info-callout {
+            background-color: var(--bg-light);
+            border-left: 4px solid var(--mint-green);
+            padding: 24px;
+            border-radius: 0 8px 8px 0;
+            margin: 35px 0;
+        }
+        .info-callout p {
+            margin-bottom: 0;
+            font-style: italic;
+            color: var(--text-gray);
+        }
+
+        /* 4. Bottom Call to Action (CTA) */
+        .bottom-cta {
+            text-align: center;
+            padding: 80px 20px;
+            background: var(--bg-light);
+            border-top: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-light);
+        }
+        .bottom-cta h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        .bottom-cta p {
+            font-size: 16px;
+            color: var(--text-gray);
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .dutch-badge {
+            display: inline-block;
+            margin-top: 25px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-gray);
+            background: #fff;
+            padding: 6px 16px;
+            border-radius: 20px;
+            border: 1px solid var(--border-light);
+        }
+
+        /* 5. Green Footer Styles */
+        footer {
+            background-color: var(--mint-green);
+            color: var(--dark-slate);
+            padding: 40px 0;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .footer-links {
+            display: flex;
+            gap: 24px;
+        }
+        .footer-links a {
+            color: var(--dark-slate);
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+        .footer-links a:hover {
+            color: #000000;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            header { padding: 15px 24px; }
+            nav.main-nav { display: none; }
+            .hero h1 { font-size: 32px; }
+            .footer-container { flex-direction: column; gap: 20px; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Navigation Bar (With Local logo.png) -->
+    <header>
+        <a href="https://joingrasp.com/" class="logo-container" target="_blank">
+            <img src="logo.png" alt="Grasp Logo" class="logo-img">
+            Grasp
+        </a>
+        
+        <nav class="main-nav">
+            <a href="https://joingrasp.com/">Product</a>
+            <a href="https://joingrasp.com/">Solutions</a>
+            <a href="https://joingrasp.com/">Resources</a>
+            <a href="https://joingrasp.com/">Company</a>
+            <a href="https://joingrasp.com/">Security</a>
+            <a href="https://joingrasp.com/">Pricing</a>
+        </nav>
+
+        <div class="header-actions">
+            <a href="https://joingrasp.com/" class="login-btn" target="_blank">Login</a>
+            <a href="https://joingrasp.com/" class="demo-btn" target="_blank">Request a Demo</a>
+        </div>
+    </header>
+
+    <!-- 2. Hero Section -->
+    <main>
+        <section class="hero">
+            <h1>AI compliance & EU regulation for enterprises</h1>
+            <p>Navigating the complex legal frameworks of modern artificial intelligence deployment while ensuring secure adoption across large organizations.</p>
+            
+            <div class="hero-buttons">
+                <a href="https://joingrasp.com/" class="secondary-btn" target="_blank">Read Guide</a>
+                <a href="https://joingrasp.com/" class="hero-demo-btn" target="_blank">Request a Demo</a>
+            </div>
+        </section>
+
+        <!-- 3. Article Content (SEO Optimized with requested link & anchor text) -->
+        <article class="article-body">
+            <p>Artificial intelligence has quickly evolved from a futuristic concept into a core operational tool for enterprises. Across sectors, teams are leveraging generative models and machine learning systems to optimize processes, write code, and analyze big data. However, as the deployment of these technologies scales, legal frameworks are tightening globally. For modern corporations, establishing robust protocols for artificial intelligence compliance is no longer optional—it is a critical requirement for sustainable growth.</p>
+            
+            <h2>The Shift Toward Strict EU AI Regulations</h2>
+            <p>Europe has taken a clear lead in defining how corporations must regulate artificial intelligence. The EU AI Act introduces a rigorous, risk-based approach to compliance, classification, and auditing. Under this legal framework, AI software is assessed based on the severity of risk it presents to safety and human rights. This development means that companies can no longer afford to operate on trust alone; they need concrete, verifiable metrics to prove they are in control of their technological ecosystem.</p>
+            <p>As regulations expand, enterprise compliance demands three fundamental shifts in traditional IT management:</p>
+            <ul>
+                <li><strong>Continuous Auditing:</strong> Moving away from annual checklists to real-time, automated monitoring of software ecosystems.</li>
+                <li><strong>Accurate Risk Classification:</strong> Systematically mapping every internal software tool to regulatory categories such as high, limited, or minimal risk.</li>
+                <li><strong>Signed Evidence Packages:</strong> Generating defensible documentation that can be handed over to legal auditors at a moment's notice.</li>
+            </ul>
+
+            <div class="info-callout">
+                <p>"Modern corporate security cannot survive on guesswork. If you cannot identify and catalog every active artificial intelligence application on your network, you are already out of compliance."</p>
+            </div>
+
+            <h2>Enterprise Challenges in Automating Compliance</h2>
+            <p>The primary barrier to successful compliance is visibility. Employees frequently subscribe to external productivity applications and web browser extensions to handle administrative, analytical, or developmental work. Often operating outside of approved channels, this "Shadow AI" exposes sensitive corporate intellectual property to public networks and poses a severe threat to data residency agreements required under GDPR.</p>
+            <p>Manually vetting dozens—sometimes hundreds—of third-party integrations is a monumental task that puts a significant strain on security teams. It slows down business agility, turning IT departments into bureaucratic bottlenecks that delay critical innovation projects.</p>
+
+            <h2>Streamlining Compliance with joingrasp.com</h2>
+            <p>To eliminate these compliance bottlenecks, enterprises are turning to automated governance solutions. By deploying a comprehensive system like <a href="https://joingrasp.com/" class="anchor-link" target="_blank">joingrasp.com</a>, organizations can easily discover unmapped software, analyze security risks, and instantly map each application against standard compliance frameworks like GDPR, the EU AI Act, and ISO 27001.</p>
+            
+            <h3>Key Operations of Automated Enterprise Governance</h3>
+            <p>Organizations looking to maintain high innovation speeds while remaining completely compliant should implement a strategy focused on three specific automated operations:</p>
+            <ul>
+                <li><strong>Real-Time Threat & Risk Mapping:</strong> Discovering hidden software installations across the enterprise network without disrupting user productivity.</li>
+                <li><strong>Automatic Regulatory Mapping:</strong> Instantly classifying detected tools against strict international regulations, identifying exactly where a compliance gap exists.</li>
+                <li><strong>Collaborative Access Control:</strong> Enabling employees to request access to new systems through automated portals that analyze security ratings and generate complete audit trails.</li>
+            </ul>
+
+            <p>In conclusion, compliance should never be treated as the enemy of corporate progress. By automating the auditing process and integrating compliance structures directly into the IT workflow, large corporations can protect their valuable corporate data, secure customer trust, and deploy cutting-edge artificial intelligence with absolute confidence.</p>
+        </article>
+
+        <!-- 4. Bottom CTA -->
+        <section class="bottom-cta">
+            <h2>Assess Your Enterprise AI Compliance</h2>
+            <p>Instantly map your corporate software stack to the EU AI Act. Book a personalized demo to turn hidden technology risks into clear, compliant, and auditable data.</p>
+            <a href="https://joingrasp.com/" class="hero-demo-btn" style="padding: 16px 36px; font-size: 18px;" target="_blank">Book a Demo</a>
+            <br>
+            <div class="dutch-badge">
+                <span>🇳🇱</span> Made in the Netherlands
+            </div>
+        </section>
+    </main>
+
+    <!-- 5. Green Footer with Stacking Links -->
+    <footer>
+        <div class="container footer-container">
+            <p>&copy; 2026 AI Governance Stacking Resource. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="https://joingrasp.com/" target="_blank">Main Site</a>
+                <a href="https://joingrasp.com/security" target="_blank">Security</a>
+                <a href="https://joingrasp.com/book-demo" target="_blank">Pricing</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
